@@ -22,3 +22,32 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+#テーブル設計
+
+##　usersテーブル
+
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| name     | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
+| occupation|text   | null: false |
+| profile  | text   | null: false |
+| position |text    | null: false |
+
+## prototyoes テーブル
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| title  | string | null: false |
+| catch_copy | text   | null: false |
+| concept |text    | null: false |
+| user | references | null: false, foreign_key: true |
+
+## room_users テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| profile  | text   | null: false |
+| user   | references | null: false, foreign_key: true |
+| prototype  | references | null: false, foreign_key: true |
